@@ -1,0 +1,174 @@
+Scenario.nrofHostGroups = 23
+Scenario.name = map
+Scenario.updateInterval = 1
+
+btInterface.type = SimpleBroadcastInterface
+btInterface.transmitSpeed = 250k
+btInterface.transmitRange = 10
+
+highspeedInterface.type = SimpleBroadcastInterface
+highspeedInterface.transmitSpeed = 20M
+highspeedInterface.transmitRange = 50
+
+Scenario.endTime = 3500
+Group.nrofHosts = 1
+Group.router = SprayAndWaitRouter
+Group.movementModel = StationaryMovement
+
+
+Group1.groupID = S
+Group1.nrofHosts = 1
+Group1.nodeLocation = 1008,1040
+Group1.interface1 = btInterface
+
+Group2.groupID = S
+Group2.nrofHosts = 1
+Group2.nodeLocation = 1008,1030
+Group2.interface1 = btInterface
+
+Group3.groupID = S
+Group3.nrofHosts = 1
+Group3.nodeLocation = 1009,1018
+Group3.interface1 = btInterface
+
+Group4.groupID = S
+Group4.nrofHosts = 1
+Group4.nodeLocation = 1009,1009
+Group4.interface1 = btInterface
+
+Group5.groupID = S
+Group5.nrofHosts = 1
+Group5.nodeLocation = 1013,1047
+Group5.interface1 = btInterface
+
+Group6.groupID = S
+Group6.nrofHosts = 1
+Group6.nodeLocation = 1012,1033
+Group6.interface1 = btInterface
+
+Group7.groupID = S
+Group7.nrofHosts = 1
+Group7.nodeLocation = 1012,1024
+Group7.interface1 = btInterface
+
+
+Group8.groupID = S
+Group8.nrofHosts = 1
+Group8.nodeLocation = 1019,1023
+Group8.interface1 = btInterface
+Group8.interface2 = highspeedInterface
+Group8.Range = 1
+
+Group9.groupID = S
+Group9.nrofHosts = 1
+Group9.nodeLocation = 1020,1001
+Group9.interface1 = btInterface
+Group9.interface2 = highspeedInterface
+Group9.Range = 1
+
+Group10.groupID = S
+Group10.nrofHosts = 1
+Group10.nodeLocation = 1023,1031
+Group10.interface1 = btInterface
+Group10.interface2 = highspeedInterface
+Group10.Range = 1
+
+Group11.groupID = S
+Group11.nrofHosts = 1
+Group11.nodeLocation = 1023,1016
+Group11.interface1 = btInterface
+Group11.interface2 = highspeedInterface
+Group11.Range = 1
+
+Group12.groupID = S
+Group12.nrofHosts = 1
+Group12.nodeLocation = 1030,1040
+Group12.interface1 = btInterface
+Group12.interface2 = highspeedInterface
+Group12.Range = 1
+
+Group13.groupID = S
+Group13.nrofHosts = 1
+Group13.nodeLocation = 1029,1024
+Group13.interface1 = btInterface
+Group13.interface2 = highspeedInterface
+Group13.Range = 1
+
+Group14.groupID = S
+Group14.nrofHosts = 1
+Group14.nodeLocation = 1032,1012
+Group14.interface1 = btInterface
+Group14.interface2 = highspeedInterface
+Group14.Range = 1
+
+Group15.groupID = S
+Group15.nrofHosts = 1
+Group15.nodeLocation = 1025,1047
+Group15.interface1 = btInterface
+Group15.interface2 = highspeedInterface
+Group15.Range = 1
+
+Group16.groupID = S
+Group16.nrofHosts = 1
+Group16.nodeLocation = 1036,1020
+Group16.interface1 = btInterface
+Group16.interface2 = highspeedInterface
+Group16.Range = 1
+
+Group17.groupID = S
+Group17.nrofHosts = 1
+Group17.nodeLocation = 1041,1009
+Group17.interface1 = btInterface
+Group17.interface2 = highspeedInterface
+Group17.Range = 1
+
+Group18.groupID = S
+Group18.nrofHosts = 1
+Group18.nodeLocation = 1045,1015
+Group18.interface1 = btInterface
+Group18.interface2 = highspeedInterface
+Group18.Range = 1
+
+Group19.groupID = S
+Group19.nrofHosts = 1
+Group19.nodeLocation = 1039,1041
+Group19.interface1 = btInterface
+Group19.interface2 = highspeedInterface
+Group19.Range = 1
+
+Group20.groupID = S
+Group20.nrofHosts = 1
+Group20.nodeLocation = 1044,1029
+Group20.interface1 = btInterface
+Group20.interface2 = highspeedInterface
+Group20.Range = 1
+
+Group21.groupID = AUV
+Group21.nrofHosts = 1
+Group21.nodeLocation = 1014,1012
+Group21.interface1 = highspeedInterface
+
+Group22.groupID = AUV
+Group22.nrofHosts = 1
+Group22.nodeLocation = 1019,1041
+Group22.interface1 = highspeedInterface
+
+Group23.groupID = AUV
+Group23.nrofHosts = 1
+Group23.nodeLocation = 1035,1031
+Group23.interface1 = highspeedInterface
+
+
+Events1.class = MessageEventGenerator
+Events1.interval = 20
+Events1.size = 20M
+Events1.prefix = myMessage
+Events1.hosts = 3,4
+Events1.tohosts = 4,5
+
+# how many reports to load
+Report.nrofReports = 1
+# length of the warm up period (simulated seconds)
+Report.warmup = 0
+
+

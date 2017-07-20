@@ -1,0 +1,122 @@
+Scenario.nrofHostGroups = 4
+Scenario.name = cumt
+Scenario.updateInterval = 1
+highspeedInterface.type = SimpleBroadcastInterface
+highspeedInterface.transmitSpeed = 10M
+highspeedInterface.transmitRange = 200
+Scenario.endTime = 43200
+Group.nrofHosts = 1
+Group.groupNodeMaster = 0
+Group.groupNodeCorn = 0
+Group.groupNodeDis = 0
+Group.router = SprayAndWaitRouter
+
+Group1.groupID = N
+Group1.bufferSize = 50M
+Group1.movementModel = MapRouteMovement
+Group1.groupSpeedLevel = 3
+Group1.nrofInterfaces = 1
+Group1.interface1 = highspeedInterface
+Group1.speed =0.5,0.5
+Group1.routeFile = newmap/cumt2_1_rt.wkt
+Group1.nrofHosts = 3
+Group1.routeFirstStop = 0
+Group1.routeType = 1
+Group1.waitTime = 0,0
+Group1.groupNodeMaster = 0,1,-1
+Group1.groupNodeCorn = 0,50,-50
+Group1.groupNodeDis = 0,60,60
+
+
+Group2.groupID = sensor
+Group2.nrofHosts = 1
+Group2.movementModel = StationaryMovement
+Group2.nodeLocation = 1100,600
+Group2.bufferSize = 50M
+Group2.groupSpeedLevel = 1
+Group2.nrofInterfaces = 1
+Group2.interface1 = highspeedInterface
+Group2.routeFirstStop = 0
+Group2.routeType = 1
+Group2.waitTime = 0,0
+Group2.groupNodeMaster = 0
+Group2.groupNodeCorn = 0
+Group2.groupNodeDis = 0
+
+Group3.groupID = sensor
+Group3.nrofHosts = 1
+Group3.movementModel = StationaryMovement
+Group3.nodeLocation = 1400,1000
+Group3.bufferSize = 50M
+Group3.groupSpeedLevel = 1
+Group3.nrofInterfaces = 1
+Group3.interface1 = highspeedInterface
+Group3.routeFirstStop = 0
+Group3.routeType = 1
+Group3.waitTime = 0,0
+Group3.groupNodeMaster = 0
+Group3.groupNodeCorn = 0
+Group3.groupNodeDis = 0
+
+Group4.groupID = sensor
+Group4.nrofHosts = 1
+Group4.movementModel = StationaryMovement
+Group4.nodeLocation = 800,1300
+Group4.bufferSize = 50M
+Group4.groupSpeedLevel = 1
+Group4.nrofInterfaces = 1
+Group4.interface1 = highspeedInterface
+Group4.routeFirstStop = 0
+Group4.routeType = 1
+Group4.waitTime = 0,0
+Group4.groupNodeMaster = 0
+Group4.groupNodeCorn = 0
+Group4.groupNodeDis = 0
+
+MovementModel.worldSize = 20000, 20000
+MapBasedMovement.nrofMapFiles = 1
+MapBasedMovement.mapFile1 = newmap/cumt2_1.wkt
+
+Events.nrof = 3
+
+Events1.class = MessageEventGenerator
+Events1.interval = 50
+Events1.size = 2M
+Events1.prefix = s1_M
+Events1.hosts = 3,3
+Events1.tohosts = 0,3
+
+Events2.class = MessageEventGenerator
+Events2.interval = 50
+Events2.size = 2M
+Events2.prefix = s1_M
+Events2.hosts = 4,4
+Events2.tohosts = 0,3
+
+Events3.class = MessageEventGenerator
+Events3.interval = 50
+Events3.size = 2M
+Events3.prefix = s1_M
+Events3.hosts = 5,5
+Events3.tohosts = 0,3
+
+# how many reports to load
+Report.nrofReports = 1
+# length of the warm up period (simulated seconds)
+Report.warmup = 0
+# default directory of reports (can be overridden per Report with output setting)
+Report.reportDir = reports/
+Report.output = reports/data.dat
+# Report classes to load
+Report.report1 = DeliveredMessagesReport
+
+rt1 = DeliveredMessagesReport
+
+# GUI underlay image settings
+GUI.UnderlayImage.fileName = newmap/cumt.png
+# Image offset in pixels (x, y)
+GUI.UnderlayImage.offset = 0, 0
+# Scaling factor for the image
+GUI.UnderlayImage.scale = 2.52
+# Image rotation (radians)
+GUI.UnderlayImage.rotate = 0

@@ -1,0 +1,41 @@
+Scenario.nrofHostGroups = 2
+Scenario.name = ceshi2
+btInterface.type = SimpleBroadcastInterface
+btInterface.transmitSpeed = 250k
+btInterface.transmitRange = 15
+Scenario.endTime = 3000
+Group.nrofHosts = 1
+Group.router = SprayAndWaitRouter
+Group.movementModel = StationaryMovement
+
+Group1.groupID = A
+Group1.nrofHosts = 1
+Group1.nodeLocation = 200,100
+Group1.groupNodeMaster = 0
+Group1.groupNodeCorn = 0
+Group1.groupNodeDis = 0
+Group1.groupSpeedLevel = 1
+
+Group2.groupID = B
+Group2.nrofHosts = 1
+Group2.nodeLocation = 210,100
+Group2.groupNodeMaster = 0
+Group2.groupNodeCorn = 0
+Group2.groupNodeDis = 0
+Group2.groupSpeedLevel = 1
+
+Events1.class = MessageEventGenerator
+Events1.interval = 1000
+Events1.size = 1M
+Events1.prefix = myMessage
+Events1.hosts = 0,1
+Events1.tohosts = 1,2
+
+# how many reports to load
+Report.nrofReports = 1
+# length of the warm up period (simulated seconds)
+Report.warmup = 0
+# default directory of reports (can be overridden per Report with output setting)
+Report.reportDir = reports/
+# Report classes to load
+Report.report1 = DeliveredMessagesReport

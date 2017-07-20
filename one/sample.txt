@@ -1,0 +1,59 @@
+Scenario.nrofHostGroups = 2
+Scenario.name = ceshi11
+Scenario.updateInterval = 1
+btInterface.type = SimpleBroadcastInterface
+highspeedInterface.transmitSpeed = 80M
+highspeedInterface.transmitRange = 3000
+Scenario.endTime = 4500
+Group.nrofHosts = 1
+Group.router = SprayAndWaitRouter
+Group1.movementModel = MapRouteMovement
+
+Group1.nrofInterfaces = 1
+Group1.interface1 = highspeedInterface
+Group1.routeFile = data/testroute.wkt
+Group1.speed = 0,0
+Group1.groupNodeMaster = 0
+Group1.groupNodeCorn = 0
+Group1.groupNodeDis = 0
+Group1.groupSpeedLevel = 1
+Group1.routeType = 1
+Group1.routeFirstStop = 0
+
+Group2.nrofInterfaces = 1
+Group2.interface1 = highspeedInterface
+Group2.nodeLocation = 1000,1000
+Group2.movementModel = StationaryMovement
+Group2.routeFile = data/testroute.wkt
+Group2.groupNodeMaster = 0
+Group2.groupNodeCorn = 0
+Group2.groupNodeDis = 0
+Group2.groupSpeedLevel = 400
+MovementModel.worldSize = 20000, 20000
+
+MapBasedMovement.nrofMapFiles = 1
+MapBasedMovement.mapFile1 = data/testMap.wkt
+Events.nrof = 2
+Events1.class = MessageEventGenerator
+Events1.interval = 10
+Events1.size = 4M
+Events1.prefix = myMessage
+Events1.hosts = 0,1
+Events1.tohosts = 1,1
+
+Events2.class = MessageEventGenerator
+Events2.interval = 10
+Events2.size = 4M
+Events2.prefix = myMessage
+Events2.hosts = 0,1
+Events2.tohosts = 1,1
+# how many reports to load
+Report.nrofReports = 1
+# length of the warm up period (simulated seconds)
+Report.warmup = 0
+# default directory of reports (can be overridden per Report with output setting)
+Report.reportDir = reports/
+Report.output = reports/data.dat
+# Report classes to load
+Report.report1 = DeliveredMessagesReport
+
